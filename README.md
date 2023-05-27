@@ -11,3 +11,5 @@ Just double click (or right click and Execute as Admin), it will prompt you that
 Any files it cannot delete because it hasn't got the rights or because its in use will remain there, it will not prompt to let you know.
 
 Please double check that you haven't stored any important file on the script paths, it's highly unlikely, but check just in case.
+
+Any recommendations, such as improvements or new paths to delete, are greatly appreciated, just bear in mind that this script is designed to as unattended as possible.
