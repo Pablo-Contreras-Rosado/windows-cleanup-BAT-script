@@ -6,6 +6,10 @@ It is recommended to run it with Administrator priviledges because some files ca
 The script has a list of paths it will delete, it is made like that so you can add any path you want just by putting it inside the list, the order doesn't matter.
 You must put the path between double quotes and with a Circumflex at the end. Example: "NewPath"^
 
+Below the list of paths you will also see a cd command to the Firefox directory followed by a series of delete commands.
+Firefox profile folders are named like "<random_characters>.default" and "<random_characters>.default-release",
+in order to delete them, we have to do some workarounds, we can not just add the paths to the list.
+
 How to execute it?
 Just double click (or right click and Execute as Admin), it will prompt you that it will delete files. Press Enter to accept, and wait until its finished.
 Any files it cannot delete because it hasn't got the rights or because its in use will remain there, it will not prompt to let you know.
