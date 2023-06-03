@@ -7,7 +7,7 @@ The script has a list of paths it will delete, it is made like that so you can a
 You must put the path between double quotes and with a Circumflex at the end. Example: "NewPath"^
 
 Below the list of paths you will also see a cd command to the Firefox directory followed by a series of delete commands.
-Firefox profile folders are named like "<random_characters>.default" and "<random_characters>.default-release",
+Firefox profile folders (where cache is stored) are named like "<random_characters>.default" and "<random_characters>.default-release",
 in order to delete them, we have to do some workarounds, we can not just add the paths to the list.
 
 How to execute it?
