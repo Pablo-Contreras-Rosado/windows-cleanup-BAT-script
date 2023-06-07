@@ -5,20 +5,29 @@ echo Greetings, this script will free space on your C drive.
 echo:
 echo It is recommended to close as many programs as you can, as this will clear their temporary data.
 echo:
+echo The current free space on your C drive is:
+dir C:|findstr "dirs"
+echo:
 echo If you wish to start the clean process, press Enter, and wait patiently, the script will let you know once it is done.
 echo:
 pause
 
 set LIST_TO_DELETE=(^
     "C:\ProgramData\Microsoft\Windows\WER\ReportQueue"^
+	"C:\ProgramData\VMware\VDM\Dumps"^
     "C:\Windows.old"^
     "C:\Windows\ccmcache"^
     "C:\Windows\Installer\$PatchCache$"^
     "C:\Windows\SoftwareDistribution\Download"^
     "C:\Windows\Temp"^
-    "C:\Users\%USERMAME%\AppData\Local\Adobe\AcroCef\DC\Acrobat\Cache"^
+	"C:\Users\%USERNAME%\.cache"^
+	"C:\Users\%USERNAME%\AppData\Local\Adobe\Acrobat\11.0\Cache"^
+	"C:\Users\%USERNAME%\AppData\Local\Adobe\Acrobat\DC\Cache"^
+    "C:\Users\%USERNAME%\AppData\Local\Adobe\AcroCef\DC\Acrobat\Cache"^
     "C:\Users\%USERNAME%\AppData\Local\Cache"^
 	"C:\Users\%USERNAME%\AppData\Local\CrashDumps"^
+	"C:\Users\%USERNAME%\AppData\Local\Google\CrashDumps"^
+	"C:\Users\%USERNAME%\AppData\Local\Google\CrashReports"^
 	"C:\Users\%USERNAME%\AppData\Local\Google\Chrome\User Data\Default\Cache"^
 	"C:\Users\%USERNAME%\AppData\Local\Google\Chrome\User Data\Default\Code Cache"^
 	"C:\Users\%USERNAME%\AppData\Local\Google\Chrome\User Data\Default\Service Worker\CacheStorage"^
@@ -35,10 +44,14 @@ set LIST_TO_DELETE=(^
 	"C:\Users\%USERNAME%\AppData\Local\Microsoft\Windows\INetCache"^
 	"C:\Users\%USERNAME%\AppData\Local\Microsoft\Windows\Temporary Internet Files"^
 	"C:\Users\%USERNAME%\AppData\Local\Microsoft\Windows\WebCache"^
+	"C:\Users\%USERNAME%\AppData\Local\Microsoft\Windows Mail"^
     "C:\Users\%USERNAME%\AppData\Local\WebEx\wbxcache"^
 	"C:\Users\%USERNAME%\AppData\LocalLow\Adobe\AcroCef\DC\Acrobat\Cache\Cache"^
     "C:\Users\%USERNAME%\AppData\LocalLow\Temp"^
-    "C:\Users\%USERNAME%\AppData\Roaming\Temp"^
+	"C:\Users\%USERNAME%\AppData\Roaming\Microsoft\Teams\Cache"^
+	"C:\Users\%USERNAME%\AppData\Roaming\Microsoft\Teams\Code Cache"^
+    "C:\Users\%USERNAME%\AppData\Roaming\Microsoft\Teams\Service Worker\CacheStorage"^
+	"C:\Users\%USERNAME%\AppData\Roaming\Temp"^
 )
 
 for %%a in %LIST_TO_DELETE% do (
@@ -74,4 +87,8 @@ for /d %%a in (*.default-release) do (
 )
 
 echo All done, you can close the script
+echo:
+echo The current free space on your C drive after cleaning is:
+dir C:|findstr "dirs"
+echo:
 pause
